@@ -1,5 +1,10 @@
-class Meal:
+# Justice Keopaseuth
+# CIS150 Mr. Marrer
+# Nov. 22, 2016
+# Assignment 8
 
+#Meal Class
+class Meal:
     #Name function
     def name(self):
         self.__name = ''
@@ -41,11 +46,62 @@ class Meal:
         return self.__mainIngredient
 
 meal = Meal()
-meal.setName('Food')
+secondMeal = Meal()
+
+meal.setName('Sandwich')
 meal.setCalories(200)
-meal.setType('Main Dish')
-meal.setPrepTime(45)
-meal.setMainIngredient('Other Food')
+meal.setType('Snack')
+meal.setPrepTime(10)
+meal.setMainIngredient('Bread')
+
+secondMeal.setName('BBQ Sandwich')
+secondMeal.setCalories(500)
+secondMeal.setType('Lunch')
+secondMeal.setPrepTime(35)
+secondMeal.setMainIngredient('BBQ Pork')
+
+#Check which one has more calories
+if meal.getCalories() > secondMeal.getCalories():
+    first = {'Name': secondMeal.getName(),
+             'Calories': secondMeal.getCalories(),
+             'Type': secondMeal.getType(),
+             'PrepTime': secondMeal.getPrepTime(),
+             'MainIngredient': secondMeal.getMainIngredient()}
+
+    second = {'Name': meal.getName(),
+             'Calories': meal.getCalories(),
+             'Type': meal.getType(),
+             'PrepTime': meal.getPrepTime(),
+             'MainIngredient': meal.getMainIngredient()}
+else:
+    first = {'Name': meal.getName(),
+             'Calories': meal.getCalories(),
+             'Type': meal.getType(),
+             'PrepTime': meal.getPrepTime(),
+             'MainIngredient': meal.getMainIngredient()}
+
+    second = {'Name': secondMeal.getName(),
+             'Calories': secondMeal.getCalories(),
+             'Type': secondMeal.getType(),
+             'PrepTime': secondMeal.getPrepTime(),
+             'MainIngredient': secondMeal.getMainIngredient()}
 
 
-print(meal.getName() + ' ' + str(meal.getCalories()) + " " + meal.getType() + " " + str(meal.getPrepTime()) + "min " + meal.getMainIngredient() + " " )
+#Setting up the print cards
+print('Healthy Choice:')
+print('||======================================||')
+print('|| Name:\t\t\t\t' + first['Name'] + '\t\t||')
+print('|| Calories:\t\t\t' + str(first['Calories']) + '\t\t\t\t||')
+print('|| Meal Type:\t\t\t' + first['Type'] + '\t\t\t||')
+print('|| Preparation Time:\t' + str(first['PrepTime']) + 'min\t\t\t||')
+print('|| Main Ingredient:\t\t' + first['MainIngredient'] + '\t\t\t||')
+print('||======================================||')
+
+print('\nNot as Healthy Choice:')
+print('||======================================||')
+print('|| Name:\t\t\t\t' + second['Name'] + '\t||')
+print('|| Calories:\t\t\t' + str(second['Calories']) + '\t\t\t\t||')
+print('|| Meal Type:\t\t\t' + second['Type'] + '\t\t\t||')
+print('|| Preparation Time:\t' + str(second['PrepTime']) + 'min\t\t\t||')
+print('|| Main Ingredient:\t\t' + second['MainIngredient'] + '\t\t||')
+print('||======================================||')

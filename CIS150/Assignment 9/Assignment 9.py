@@ -1,13 +1,16 @@
+#Importing libraries for GUI structures
 from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.label import Label
 from kivy.uix.button import Button
 
+#Define main class for Menu board
 
 class MainMenuOptions(FloatLayout):
     def __init__(self, **kwargs):
         super(MainMenuOptions, self).__init__(**kwargs)
 
+        #Define Labels
         self.titleLabel = Label(text='Health Kiosk Main Menu',
                             size_hint=(.10, .10),
                             pos=(150, 500),
@@ -38,6 +41,7 @@ class MainMenuOptions(FloatLayout):
                             color=(255, 255, 255, 1),
                             font_size='15sp')
 
+        #Define buttons
         self.caloriesButton = Button(text='Search Meal \n\rby Calories',
                                      size_hint=(.20, .20),
                                      pos=(50, 250))
@@ -58,6 +62,7 @@ class MainMenuOptions(FloatLayout):
                                  size_hint=(.10, .10),
                                  pos=(650, 500))
 
+        #Adding the widget for the GUI window
         self.add_widget(self.titleLabel)
         self.add_widget(self.caloriesLabel)
         self.add_widget(self.prepLabel)
@@ -70,6 +75,8 @@ class MainMenuOptions(FloatLayout):
         self.add_widget(self.exitButton)
 
 
+#Code that is for the error message
+#TODO: Integrate this with the main program
 class InProgressMessage(FloatLayout):
     def __init__(self, **kwargs):
         super(InProgressMessage, self).__init__(**kwargs)
@@ -78,6 +85,7 @@ class InProgressMessage(FloatLayout):
         self.add_widget(self.backButton)
 
 
+#Run the app
 class MenuKiosk(App):
     def build(self):
         return MainMenuOptions()
